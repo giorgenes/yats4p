@@ -10,4 +10,8 @@ FactoryGirl.define do
   factory :completed_task, :parent => :task do
     completed true
   end
+  
+  factory :late_task, :parent => :task do
+    due "2000-01-01"
+  end
 end

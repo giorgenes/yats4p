@@ -1,0 +1,16 @@
+%tr#newtask
+  %td{:colspan => 3 }
+    = form_for @task, :html => { :class => 'form-horizontal', :remote => true} do |f|
+      .task
+        %div
+          = f.text_field :title, :class => 'text_field'
+        %div
+          = @task.errors[:title].join(", ")
+      .due
+        %div
+          = f.datepicker :due
+        %div
+          = @task.errors[:due].join(", ")
+      .actions
+        = link_to "X", tasks_path, :class => 'btn btn-mini btn-danger pull-right'
+        = f.submit 'Save', :class => 'btn btn-primary btn-mini pull-right'

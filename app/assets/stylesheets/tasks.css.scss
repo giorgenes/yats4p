@@ -18,16 +18,33 @@
 }
 
 .task {
+	display: table-cell;
 	width: 65%;
 }
 .due {
+	display: table-cell;
 	width: 15%;
+
+	input {
+		width: 80%;
+	}
 }
 
 .actions {
+	display: table-cell;
 	width: 20%;
 	.btn-success, .btn-action {
 		width: 5.0em;
+	}
+}
+
+#newtask {
+	& > td, form, tr {
+		width: 100%;
+	}
+
+	.due input, .task input {
+		width: 95%;
 	}
 }
 

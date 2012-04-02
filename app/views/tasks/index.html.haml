@@ -1,19 +1,13 @@
 %h1 Tasks
 .row.newbar
-  = link_to "New", new_task_path, :class => 'btn btn-primary span1'
-- if @tasks.empty?
-  %p
-    Click on the 
-    = link_to "New", new_task_path
-    button to start adding tasks.
-- else
-  %table.table.table-striped
-    %thead
-      %tr
-        %th.task
-          = t("activerecord.attributes.task.title", :default => t("activerecord.labels.title", :default => "Title"))
-        %th.due Deadline 
-        %th.actions Actions
-    %tbody
-      - @tasks.each do |task|
-        = render :partial => 'task', :locals => { :task => task } 
+  = link_to "New", new_task_path, :class => 'btn btn-primary span1', :remote => true
+%table.table.table-striped
+  %thead
+    %tr
+      %th.task
+        = t("activerecord.attributes.task.title", :default => t("activerecord.labels.title", :default => "Title"))
+      %th.due Deadline 
+      %th.actions Actions
+  %tbody#task_list
+    - @tasks.each do |task|
+      = render :partial => 'task', :locals => { :task => task } 
