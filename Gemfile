@@ -28,6 +28,8 @@ end
 gem 'jquery-rails'
 
 group :test, :development do
+  gem 'database_cleaner'
+  gem 'capybara-webkit'
   gem 'rspec-rails'
   gem 'tork', :require => false
   gem 'guard-spin'
