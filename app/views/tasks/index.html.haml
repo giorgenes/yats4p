@@ -11,11 +11,4 @@
       %th Actions
   %tbody
     - @tasks.each do |task|
-      %tr{:class => "completed_task_#{task.completed} late_task_#{task.late?}"}
-        %td.task= link_to(task.title, edit_task_path(task))
-        %td.due= task.due
-        %td.actions
-          = link_to "X", task_path(task), :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}", :class => 'btn btn-mini btn-danger pull-right' 
-          = done_undone_button(task)
-
-
+      = render :partial => 'task', :locals => { :task => task } 

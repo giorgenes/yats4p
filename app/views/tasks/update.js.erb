@@ -1,0 +1,2 @@
+var html = '<%= j render(:partial => 'task', :locals => { :task => @task }) %>';
+$('#task_<%= @task.id %>').replaceWith(html);
