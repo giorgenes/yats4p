@@ -2,13 +2,19 @@
 .row
   .offset5.span1
     = link_to "New", new_task_path, :class => 'btn btn-primary span1'
-%table.table.table-striped
-  %thead
-    %tr
-      %th
-        = t("activerecord.attributes.task.title", :default => t("activerecord.labels.title", :default => "Title"))
-      %th Deadline 
-      %th Actions
-  %tbody
-    - @tasks.each do |task|
-      = render :partial => 'task', :locals => { :task => task } 
+- if @tasks.empty?
+  %p
+    Click on the 
+    = link_to "New", new_task_path
+    button to start adding tasks.
+- else
+  %table.table.table-striped
+    %thead
+      %tr
+        %th
+          = t("activerecord.attributes.task.title", :default => t("activerecord.labels.title", :default => "Title"))
+        %th Deadline 
+        %th Actions
+    %tbody
+      - @tasks.each do |task|
+        = render :partial => 'task', :locals => { :task => task } 
