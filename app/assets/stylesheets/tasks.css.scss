@@ -7,12 +7,19 @@
 		text-decoration: line-through;
 		color: #aaa;
 	}
+}
 
-	.task {
-		width: 50%;
-	}
-	.due {
-		width: 15%;
+.task {
+	width: 65%;
+}
+.due {
+	width: 15%;
+}
+
+.actions {
+	width: 20%;
+	.btn-success, .btn-action {
+		width: 5.0em;
 	}
 }
 

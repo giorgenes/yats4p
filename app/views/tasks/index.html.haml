@@ -11,10 +11,10 @@
   %table.table.table-striped
     %thead
       %tr
-        %th
+        %th.task
           = t("activerecord.attributes.task.title", :default => t("activerecord.labels.title", :default => "Title"))
-        %th Deadline 
-        %th Actions
+        %th.due Deadline 
+        %th.actions Actions
     %tbody
       - @tasks.each do |task|
         = render :partial => 'task', :locals => { :task => task } 
