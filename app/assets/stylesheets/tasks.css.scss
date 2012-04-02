@@ -9,7 +9,11 @@
 	}
 }
 
+
 .newbar {
+	.btn {
+		color: white !important;
+	}
 	margin-top: 20px;
 	margin-bottom: 20px;
 	.btn {
@@ -35,6 +39,7 @@
 	width: 20%;
 	.btn-success, .btn-action {
 		width: 5.0em;
+		padding-left: 2px;
 	}
 }
 
@@ -49,9 +54,10 @@
 }
 
 .late_task_true {
-	color: red;
-
-	a {
+	.due, .task {
 		color: red;
+		a {
+			color: red;
+		}
 	}
 }
