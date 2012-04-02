@@ -1,7 +1,7 @@
 var html = '<%= j render('row_form') %>';
-if($('#newtask').size() == 0) {
+if($('#task_').size() == 0) {
 	$('#task_list').prepend(html);
 }
 else {
-	$('#newtask').replaceWith(html);
+	$('#task_').replaceWith(html);
 }

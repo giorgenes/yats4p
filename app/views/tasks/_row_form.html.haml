@@ -1,4 +1,4 @@
-%tr#newtask
+%tr.taskrowform{:id => "task_#{@task.id}"}
   %td{:colspan => 3 }
     = form_for @task, :html => { :class => 'form-horizontal', :remote => true} do |f|
       .task
@@ -12,5 +12,6 @@
         %div
           = @task.errors[:due].join(", ")
       .actions
-        = link_to "X", tasks_path, :class => 'btn btn-mini btn-danger pull-right'
-        = f.submit 'Save', :class => 'btn btn-primary btn-mini pull-right'
+        .inner_actions
+          = f.submit 'Save', :class => 'btn btn-action btn-mini'
+          = link_to "X", tasks_path, :class => 'btn btn-mini btn-danger'

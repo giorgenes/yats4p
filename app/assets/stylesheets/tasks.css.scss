@@ -34,22 +34,31 @@
 	}
 }
 
+$action_button_size: 55px;
+
 .actions {
 	display: table-cell;
 	width: 20%;
 	.btn-success, .btn-action {
-		width: 5.0em;
+		width: $action_button_size;
 		padding-left: 2px;
+	}
+	input.btn-action {
+		width: $action_button_size + 9px;
 	}
 }
 
-#newtask {
+.taskrowform {
 	& > td, form, tr {
 		width: 100%;
 	}
 
 	.due input, .task input {
 		width: 95%;
+	}
+
+	.inner_actions {
+		margin-left: 14px;
 	}
 }
 

@@ -1,5 +1,5 @@
 %tr{:id => "task_#{task.id}", :class => "completed_task_#{task.completed} late_task_#{task.late?}"}
-  %td.task= link_to(task.title, edit_task_path(task))
+  %td.task= link_to(task.title, edit_task_path(task), :remote => true)
   %td.due= task.due
   %td.actions
     = done_undone_button(task)
