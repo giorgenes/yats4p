@@ -6,4 +6,8 @@ FactoryGirl.define do
     completed false
     due "2012-03-29"
   end
+
+  factory :completed_task, :parent => :task do
+    completed true
+  end
 end
