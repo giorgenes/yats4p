@@ -15,9 +15,8 @@
         %td.task= task.title
         %td.due= task.due
         %td.actions
-          = link_to "Show", task_path(task), :class => 'btn btn-mini'
           = link_to "Edit", edit_task_path(task), :class => 'btn btn-mini'
-          = link_to "Destroy", task_path(task), :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}", :class => 'btn btn-mini btn-danger' 
-          = link_to (task.completed ? "Not done!" : "Done!"), task_path(task, {:task => {:completed => !task.completed}}), :method => :put, :class => 'btn btn-mini btn-danger' 
+          = link_to "X", task_path(task), :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}", :class => 'btn btn-mini btn-danger' 
+          = done_undone_button(task)
 
 
