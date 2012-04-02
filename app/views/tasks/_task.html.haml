@@ -2,6 +2,6 @@
   %td.task= link_to(task.title, edit_task_path(task))
   %td.due= task.due
   %td.actions
-    = link_to "X", task_path(task), :remote => true, :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}", :class => 'btn btn-mini btn-danger pull-right' 
     = done_undone_button(task)
+    = link_to "X", task_path(task), :remote => true, :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}", :class => 'btn btn-mini btn-danger' 
 

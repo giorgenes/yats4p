@@ -4,6 +4,6 @@ module TasksHelper
       task_path(task, {:task => {:completed => !task.completed}}),
       :method => :put,
       :remote => true,
-      :class => "btn btn-mini pull-right btn-#{task.completed ? 'action' : 'success'}" 
+      :class => "btn btn-mini btn-#{task.completed ? 'action' : 'success'}" 
   end
 end
