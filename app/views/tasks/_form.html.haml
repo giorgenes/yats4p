@@ -10,7 +10,7 @@
     .control-group
       = f.label :due, :class => 'control-label'
       .controls
-        = f.date_select :due, :class => 'date_select'
+        = f.datepicker :due
     .form-actions
       = f.submit nil, :class => 'btn btn-primary'
       = link_to "Cancel", tasks_path, :class => 'btn'

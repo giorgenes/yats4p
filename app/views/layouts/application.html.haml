@@ -1,6 +1,7 @@
 !!! 5
 %html{:lang => "en"}
   %head
+    = javascript_include_tag "application"
     %meta{:charset => "utf-8"}/
     %title= content_for?(:title) ? yield(:title) : "Yats4p"
     = csrf_meta_tags
@@ -45,8 +46,3 @@
             .row
               .span3.offset7
                 %p &copy; Giorgenes Gelatti 2012
-    /
-      Le javascript
-      \==================================================
-    / Placed at the end of the document so the pages load faster
-    = javascript_include_tag "application"

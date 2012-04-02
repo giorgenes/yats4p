@@ -5,6 +5,8 @@ gem 'haml'
 gem 'haml-rails'
 gem 'factory_girl_rails'
 gem "twitter-bootstrap-rails"
+gem 'jquery_datepicker'
+gem 'jquery-ui-themes'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
