@@ -1,4 +1,6 @@
 Yats4p::Application.routes.draw do
+  match "about" => 'about#index'
+
   resources :tasks
 
   # The priority is based upon order of creation:
