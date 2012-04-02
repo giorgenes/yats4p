@@ -1,15 +1,17 @@
-%p#notice= notice
-
 %p
-  %b Title:
+  %strong= t("activerecord.attributes.task.title", :default => t("activerecord.labels.title", :default => "Title")) + ":"
+  %br
   = @task.title
 %p
-  %b Completed:
+  %strong= t("activerecord.attributes.task.completed", :default => t("activerecord.labels.completed", :default => "Completed")) + ":"
+  %br
   = @task.completed
 %p
-  %b Due:
+  %strong= t("activerecord.attributes.task.due", :default => t("activerecord.labels.due", :default => "Due")) + ":"
+  %br
   = @task.due
 
-= link_to 'Edit', edit_task_path(@task)
-\|
-= link_to 'Back', tasks_path
+.form-actions
+  = link_to "Back", tasks_path, :class => 'btn'
+  = link_to "Edit", edit_task_path(@task), :class => 'btn'
+  = link_to "Delete", task_path(@task), :method => "delete", :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}", :class => 'btn btn-danger'

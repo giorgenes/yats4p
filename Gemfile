@@ -4,6 +4,7 @@ gem 'rails', '3.2.3'
 gem 'haml'
 gem 'haml-rails'
 gem 'factory_girl_rails'
+gem "twitter-bootstrap-rails"
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

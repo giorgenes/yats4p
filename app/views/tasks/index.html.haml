@@ -1,23 +1,23 @@
-%h1 Listing tasks
-
-%table
-  %tr
-    %th Title
-    %th Completed
-    %th Due
-    %th
-    %th
-    %th
-
-  - @tasks.each do |task|
+%h1 Tasks
+.row
+  .offset7.span1
+    = link_to "New", new_task_path, :class => 'btn btn-primary span1'
+%table.table.table-striped
+  %thead
     %tr
-      %td= task.title
-      %td= task.completed
-      %td= task.due
-      %td= link_to 'Show', task
-      %td= link_to 'Edit', edit_task_path(task)
-      %td= link_to 'Destroy', task, :confirm => 'Are you sure?', :method => :delete
+      %th ID
+      %th
+        = t("activerecord.attributes.task.title", :default => t("activerecord.labels.title", :default => "Title"))
+      %th Created at
+      %th Actions
+  %tbody
+    - @tasks.each do |task|
+      %tr
+        %td= task.id
+        %td= link_to task.title, task_path(task)
+        %td= task.created_at
+        %td
+          = link_to "Show", task_path(task), :class => 'btn btn-mini'
+          = link_to "Edit", edit_task_path(task), :class => 'btn btn-mini'
+          = link_to "Destroy", task_path(task), :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}", :class => 'btn btn-mini btn-danger' 
 
-%br
-
-= link_to 'New Task', new_task_path
